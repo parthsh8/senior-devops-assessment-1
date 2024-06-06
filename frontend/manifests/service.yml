@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  namespace: default
+spec:
+  ports:
+  - nodePort: 30420
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: frontend1devops1assess1app
+  type: LoadBalancer
